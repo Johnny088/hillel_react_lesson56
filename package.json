@@ -1,0 +1,20 @@
+{
+  "name": "hillel_node_lesson56",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/Johnny088/hillel_react_lesson56#readme",
+  "bugs": {
+    "url": "https://github.com/Johnny088/hillel_react_lesson56/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Johnny088/hillel_react_lesson56.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
