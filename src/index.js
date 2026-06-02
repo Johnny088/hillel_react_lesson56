@@ -1,5 +1,5 @@
 import fs from 'fs/promises';
-import { dbPath } from './constans/constans.js';
+import { dbPath } from './constants/constants.js';
 
 const readUsers = async () => {
   const data = await fs.readFile(dbPath, 'utf-8');
@@ -29,20 +29,19 @@ const calculateTotalBalance = async () => {
     acc += user.balance;
     return acc;
   }, 0);
-  return totalBalance;
+  return `total balance: ${totalBalance}`;
 };
 
 console.log(await calculateTotalBalance());
 
 const getRichestUser = async () => {
   const users = await readUsers();
-  let reachestUser = users[0];
-  users.map(user => {
-    if (user.balance > reachestUser.balance) {
-      reachestUser = user;
-    }
-  });
-  return reachestUser;
+
+  const richestUser = users.reduce((acc, currentUser) => {
+    return acc.balance >= currentUser.balance ? acc : currentUser;
+  }, users[0]);
+
+  return richestUser;
 };
 
 console.log(await getRichestUser());
